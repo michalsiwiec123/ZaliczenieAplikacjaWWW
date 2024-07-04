@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyniki Przeliczenia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        .result-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-container h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .result-container p {
+            font-size: 18px;
+        }
+
+        .result-container h3 {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+
+        .result-container a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .result-container a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+
+        <h1>Wyniki Przeliczenia</h1>
+    </div>
+    <div class="result-container">
+        <h2>Wynik Przeliczania</h2>
+        <p>Przeliczone <span th:text="${amount}"></span> <span th:text="${fromCurrency}"></span> NA <span th:text="${toCurrency}"></span>:</p>
+        <h3><span th:text="${result}"></span> <span th:text="${toCurrency}"></span></h3>
+        <a href="/">Wróć do przeliczania</a>
+    </div>
+    <div class="footer">
+
+    </div>
+</div>
+</body>
+</html>

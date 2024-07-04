@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Przelicznik Walut</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        .converter-form {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .converter-form h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .converter-form input[type="text"],
+        .converter-form select,
+        .converter-form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .converter-form input[type="text"]:focus,
+        .converter-form select:focus,
+        .converter-form button:focus {
+            border-color: #4CAF50;
+        }
+
+        .converter-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .converter-form button:hover {
+            background-color: #45a049;
+        }
+
+        .converter-form select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%204%205"><path%20fill="none"%20stroke="%23000"%20stroke-width="1.5"%20d="M2%201L0%203h4L2%201z"/></svg>') no-repeat right 10px center;
+            background-size: 10px 5px;
+        }
+
+        .converter-form select::-ms-expand {
+            display: none;
+        }
+
+        .converter-form .currency-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .converter-form .currency-row span {
+            margin: 0 10px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .exchange-rates,
+        .conversion-history,
+        .footer {
+            margin-top: 20px;
+        }
+
+        .exchange-rates h3,
+        .conversion-history h3,
+        .footer h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .exchange-rates ul,
+        .conversion-history ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exchange-rates li,
+        .conversion-history li {
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+                <h1>Przelicznik Walut</h1>
+    </div>
+    <div class="converter-form">
+        <h2>Przelicz waluty</h2>
+        <form action="/convert" method="post">
+            <input type="text" name="amount" placeholder="Kwota" required>
+            <div class="currency-row">
+                <select name="fromCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+
+                </select>
+                <span>NA</span>
+                <select name="toCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+
+                </select>
+            </div>
+            <button type="submit">Przelicz</button>
+        </form>
+    </div>
+    <div class="exchange-rates">
+        <h3>Aktualne kursy walut</h3>
+        <ul>
+            <li>1 USD = 0.90 EUR</li>
+            <li>1 EUR = 0.83 GBP</li>
+            <li>1 GBP = 1.31 USD</li>
+
+        </ul>
+    </div>
+    <div class="footer">
+          </div>
+</div>
+</body>
+</html>
